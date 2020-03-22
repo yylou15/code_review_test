@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="JPetStore_Struts_Mybatis_Spring" extends="struts-default">
+        <action name="demo" class="action.AbstractAction">
+            <result name="SUCCESS">/WEB-INF/jsp/demo.jsp</result>
+        </action>
+
+        <action name="main" class="action.MainAction">
+            <result name="MAIN">/WEB-INF/jsp/catalog/Main.jsp</result>
+        </action>
+
+        <!-- 跳转到sign on-->
+        <action name="signonForm" class="action.AccountAction" method="signonForm">
+            <result name="success">/WEB-INF/jsp/account/SignonForm.jsp</result>
+        </action>
+
+        <!--退出登录sign off -->
+        <action name="signoff" class="action.AccountAction" method="signoff">
+            <result name="success">/WEB-INF/jsp/catalog/Main.jsp</result>
+        </action>
+
+        <!--跳转到注册-->
+        <action name="register" class="action.RegisterAction">
+            <result name="success">/WEB-INF/jsp/account/NewAccountForm.jsp</result>
+        </action>
+        <!--新增用户-->
+        <action name="newAccount" class="action.NewAccountAction">
+            <result name="success">/WEB-INF/jsp/catalog/Main.jsp</result>
+        </action>
+        <!--登陆-->
+        <action name="login" class="action.SignOnAction">
+            <result name="success">/WEB-INF/jsp/catalog/Main.jsp</result>
+            <result name="input">/WEB-INF/jsp/account/SignonForm.jsp</result>
+        </action>
+        <!--跳转至编辑account界面-->
+        <action name="editAccount" class="action.EditAccountAction">
+            <result name="success">/WEB-INF/jsp/account/EditAccountForm.jsp</result>
+        </action>
+        <!--编辑account-->
+        <action name="confirmEdit" class="action.ConfirmEditAction">
+            <result name="success">/WEB-INF/jsp/account/EditAccountForm.jsp</result>
+        </action>
+
+        <!--查看category-->
+        <action name="viewCategory" class="action.ViewCategoryAction" >
+            <result name="success">/WEB-INF/jsp/catalog/Category.jsp</result>
+        </action>
+
+        <!--查看product-->
+        <action name="viewProduct" class="action.ViewProductAction" >
+            <result name="success">/WEB-INF/jsp/catalog/Product.jsp</result>
+        </action>
+
+        <!--查看item-->
+        <action name="viewItem" class="action.ViewItemAction" >
+            <result name="success">/WEB-INF/jsp/catalog/Item.jsp</result>
+        </action>
+
+        <!--查询-->
+        <action name="searchProduct" class="action.SearchProductsAction">
+            <result name="success">/WEB-INF/jsp/catalog/SearchProducts.jsp</result>
+        </action>
+
+        <!--添加到购物车-->
+        <action name="addItemToCart" class="action.AddItemToCartAction">
+            <result name="success">/WEB-INF/jsp/cart/Cart.jsp</result>
+        </action>
+
+        <!--删除购物车商品数量-->
+        <action name="removeItemFromCart" class="action.RemoveItemFromCartAction">
+            <result name="success">/WEB-INF/jsp/cart/Cart.jsp</result>
+        </action>
+
+        <action name="viewHelp" class="action.ViewHelpAction">
+            <result name="HELP">/WEB-INF/html/help.html</result>
+        </action>
+        <!--查看购物车-->
+        <action name="viewCart" class="action.ViewCartAction" method="viewCart">
+            <result name="VIEW_CART">/WEB-INF/jsp/cart/Cart.jsp</result>
+        </action>
+
+        <!--新建订单-->
+        <action name="newOrderForm" class="action.NewOrderFormAction">
+            <result name="SIGNON">/WEB-INF/jsp/account/SignonForm.jsp</result>
+            <result name="success">/WEB-INF/jsp/order/NewOrderForm.jsp</result>
+        </action>
+
+        <!--确认订单-->
+        <action name="confirmOrder" class="action.ConfirmOrderAction">
+            <result name="SHIPPINGFORM">/WEB-INF/jsp/order/ShippingForm.jsp</result>
+            <result name="success">/WEB-INF/jsp/order/ConfirmOrder.jsp</result>
+        </action>
+
+
+        <!--查看生成订单-->
+        <action name="viewOrder" class="action.ViewOrderAction">
+            <result name="success">/WEB-INF/jsp/order/ViewOrder.jsp</result>
+        </action>
+
+        <!--检查订单-->
+        <action name="checkOrder" class="action.CheckOrderAction">
+            <result name="success">/WEB-INF/jsp/order/ViewOrder.jsp</result>
+        </action>
+
+        <!--我的订单-->
+        <action name="orderList" class="action.OrderListAction">
+            <result name="success">/WEB-INF/jsp/order/ListOrders.jsp</result>
+        </action>
+    </package>
+</struts>
