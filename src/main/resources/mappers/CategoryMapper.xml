@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.CategoryDAO">
+  
+  <select id="getCategory" parameterType="string" resultType="domain.Category">
+    SELECT
+      "catid" AS categoryId,
+      "name",
+      "descn" AS description
+    FROM "category"
+    WHERE "catid" = #{categoryId}
+  </select>
+
+  <select id="getCategoryList" resultType="domain.Category">
+    SELECT
+      "catid" AS categoryId,
+      "name",
+      "descn" AS description
+    FROM "category"
+  </select>
+
+</mapper>
